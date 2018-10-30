@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase failureBehaviour="Continue" id="43">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: GAAIAStag (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">GAAIAStag</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">GAAIAStag</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName"/>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="2" title="On SF Global Search">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">GAAIAStag</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="sf:ui:target?action=GlobalSearch"/>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Always</value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On SF Global Search</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="3">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="245" title="Set Values: OrderNo">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">OrderNo</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="value" valueClass="string">O-00013951</value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="90" title="Set Values: counter">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">counter</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="value" valueClass="string">1</value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="4" title="Set the Search Box field to {OrderNo}">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=searchBox"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="value">
+                  <value class="variable">
+                    <path element="OrderNo"/>
+                  </value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Search Box field to {OrderNo}</value>
+                </argument>
+                <argument id="autoRetry"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <textType>
+                      <constraints>
+                        <valueConstraint name="mimeType">text/plain</valueConstraint>
+                      </constraints>
+                    </textType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="5" title="Click the Search Button button">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=searchButton"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                </argument>
+                <argument id="hover">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Click the Search Button button</value>
+                </argument>
+                <argument id="autoRetry"/>
+                <argument id="ieClickMethod">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                  <summary>How the click should be executed for Internet Explorer.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="6" title="On SF Order Search screen">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">GAAIAStag</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="sf:ui:target?object=Apttus_Config2__Order__c&amp;action=Search"/>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Dont</value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On SF Order Search screen</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="7">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" isTitleUpdated="true" name="UiWithRow" testItemId="8" title="Find out the Order Number ">
+              <arguments>
+                <argument id="uiConnectionName">
+                  <value class="value" valueClass="string">GAAIAStag</value>
+                </argument>
+                <argument id="locator">
+                  <value class="uiLocator" uri="sf:ui:locator:row?table=Search%2FsearchView%2FsearchTable"/>
+                </argument>
+                <argument id="uiRowLocator">
+                  <value class="eq">
+                    <lhs class="variable">
+                      <path element="APTTUS_CONFIG2__ORDER__C_NAME"/>
+                    </lhs>
+                    <rhs class="variable" topLevel="true">
+                      <path element="OrderNo"/>
+                    </rhs>
+                  </value>
+                </argument>
+                <argument id="locatorDescription">
+                  <value class="value" valueClass="string">With Apttus_Config2__Order__c rows {APTTUS_CONFIG2__ORDER__C_NAME = $OrderNo}</value>
+                </argument>
+                <argument id="failIfNotFound">
+                  <value class="value" valueClass="boolean">true</value>
+                </argument>
+                <argument id="debugRowLocator"/>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">Row</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Local</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="substeps" testItemId="9">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" isTitleUpdated="true" name="UiDoAction" testItemId="10" title="Click the Order Number">
+                      <arguments>
+                        <argument id="locator">
+                          <value class="uiLocator" uri="ui:locator?name=APTTUS_CONFIG2__ORDER__C_NAME&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DApttus_Config2__Order__c%26field%3DName&amp;rowLocator=APTTUS_CONFIG2__ORDER__C_NAME+%3D+%27O-00014109%27"/>
+                        </argument>
+                        <argument id="interaction">
+                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                        </argument>
+                        <argument id="hover">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="boolean">true</value>
+                        </argument>
+                        <argument id="beforeWait">
+                          <value class="uiWait" uri="default"/>
+                        </argument>
+                        <argument id="afterWait">
+                          <value class="uiWait" uri="default"/>
+                        </argument>
+                        <argument id="interactionDescription">
+                          <value class="value" valueClass="string">Click the Order Number field</value>
+                        </argument>
+                        <argument id="autoRetry"/>
+                        <argument id="ieClickMethod">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                      </arguments>
+                      <generatedParameters>
+                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                          <type>
+                            <booleanType/>
+                          </type>
+                        </apiParam>
+                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                          <summary>How the click should be executed for Internet Explorer.</summary>
+                          <type>
+                            <choiceType>
+                              <constraints>
+                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                              </constraints>
+                            </choiceType>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="27" title="On SF Order View screen">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">GAAIAStag</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="sf:ui:target?object=Apttus_Config2__Order__c&amp;action=View"/>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Dont</value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On SF Order View screen</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="sfUiTargetObjectId"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="28">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="224" title="Verifiy Order Number on Order page">
+              <arguments>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">Values</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+                <argument id="fieldAssertions">
+                  <value class="valueList" mutable="Mutable">
+                    <uiFieldAssertion resultName="title">
+                      <fieldLocator uri="ui:locator?name=title&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DApttus_Config2__Order__c%26field%3Dtitle"/>
+                      <attributeAssertions>
+                        <uiAttributeAssertion attributeName="value" comparisonType="EqualTo" normalize="true">
+                          <value class="variable">
+                            <path element="OrderNo"/>
+                          </value>
+                        </uiAttributeAssertion>
+                      </attributeAssertions>
+                    </uiFieldAssertion>
+                  </value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="columnAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="pageAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="autoRetry"/>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="234" title="Read OrderLine Item Row Count">
+              <arguments>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">TotalOLI</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+                <argument id="fieldAssertions">
+                  <value class="valueList" mutable="Mutable">
+                    <uiFieldAssertion resultName="Apttus_Config2__OrderLineItems__r">
+                      <fieldLocator uri="ui:locator?name=Apttus_Config2__OrderLineItems__r&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DApttus_Config2__Order__c%26relationship%3DApttus_Config2__OrderLineItems__r"/>
+                      <attributeAssertions>
+                        <uiAttributeAssertion attributeName="value" comparisonType="None"/>
+                        <uiAttributeAssertion attributeName="totalRowCount" comparisonType="None"/>
+                      </attributeAssertions>
+                    </uiFieldAssertion>
+                  </value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="columnAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="pageAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="autoRetry"/>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="235" title="Set Values: RowCount">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">RowCount</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="variable">
+                          <path element="TotalOLI"/>
+                          <path element="fields"/>
+                          <path element="Apttus_Config2__OrderLineItems__r"/>
+                          <path element="totalRowCount"/>
+                        </value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.DoWhile" name="DoWhile" testItemId="191" title="While: true">
+              <arguments>
+                <argument id="condition">
+                  <value class="value" valueClass="string">true</value>
+                </argument>
+                <argument id="counterName">
+                  <value class="value" valueClass="string">LoopCounter</value>
+                </argument>
+                <argument id="counterStart">
+                  <value class="value" valueClass="decimal">1</value>
+                </argument>
+                <argument id="counterEnd">
+                  <value class="variable">
+                    <path element="RowCount"/>
+                  </value>
+                </argument>
+                <argument id="continueOnFailure">
+                  <value class="value" valueClass="boolean">true</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="substeps" testItemId="192">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="168" title="On SF Order View screen">
+                      <tags/>
+                      <arguments>
+                        <argument id="uiConnectionName">
+                          <value class="value" valueClass="string">GAAIAStag</value>
+                        </argument>
+                        <argument id="target">
+                          <value class="uiTarget" uri="sf:ui:target?object=Apttus_Config2__Order__c&amp;action=View"/>
+                        </argument>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">Dont</value>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">On SF Order View screen</value>
+                        </argument>
+                        <argument id="windowSelection">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="windowSize">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="closeWindow"/>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="sfUiTargetObjectId"/>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="169">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="170" title="With Apttus_Config2__OrderLineItems__r rows {$LoopCounter}">
+                              <arguments>
+                                <argument id="uiConnectionName">
+                                  <value class="value" valueClass="string">GAAIAStag</value>
+                                </argument>
+                                <argument id="locator">
+                                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FApttus_Config2__OrderLineItems__r%2FApttus_Config2__OrderLineItems__rTable"/>
+                                </argument>
+                                <argument id="uiRowLocator">
+                                  <value class="variable" topLevel="true">
+                                    <path element="LoopCounter"/>
+                                  </value>
+                                </argument>
+                                <argument id="locatorDescription">
+                                  <value class="value" valueClass="string">With Apttus_Config2__OrderLineItems__r rows {$LoopCounter}</value>
+                                </argument>
+                                <argument id="failIfNotFound">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="debugRowLocator">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">Row</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Local</value>
+                                </argument>
+                                <argument id="autoPaginate">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                              </arguments>
+                              <clauses>
+                                <clause name="substeps" testItemId="171">
+                                  <steps>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="172" title="Click the Line Item Id field">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=NAME&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DApttus_Config2__Order__c%26field%3DNAME%26relationship%3DApttus_Config2__OrderLineItems__r&amp;rowLocator=NAME+%3D+%27OI-0000050782%27"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                                        </argument>
+                                        <argument id="hover">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureBefore">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="beforeWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="afterWait">
+                                          <value class="uiWait" uri="default"/>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Click the Line Item Id field</value>
+                                        </argument>
+                                        <argument id="autoRetry"/>
+                                        <argument id="ieClickMethod">
+                                          <value class="value" valueClass="string">Default</value>
+                                        </argument>
+                                      </arguments>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                                          <summary>How the click should be executed for Internet Explorer.</summary>
+                                          <type>
+                                            <choiceType>
+                                              <constraints>
+                                                <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                                                <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                                              </constraints>
+                                            </choiceType>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                  </steps>
+                                </clause>
+                              </clauses>
+                              <generatedParameters>
+                                <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                                  <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                                  <type>
+                                    <booleanType/>
+                                  </type>
+                                </apiParam>
+                              </generatedParameters>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                      <generatedParameters>
+                        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                          <type>
+                            <textType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="250" title="On SF Order Line Item View screen">
+                      <arguments>
+                        <argument id="uiConnectionName">
+                          <value class="value" valueClass="string">GAAIAStag</value>
+                        </argument>
+                        <argument id="target">
+                          <value class="uiTarget" uri="sf:ui:target?object=Apttus_Config2__OrderLineItem__c&amp;action=View"/>
+                        </argument>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">Dont</value>
+                        </argument>
+                        <argument id="targetDescription">
+                          <value class="value" valueClass="string">On SF Order Line Item View screen</value>
+                        </argument>
+                        <argument id="windowSelection">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="windowSize">
+                          <value class="value" valueClass="string">Default</value>
+                        </argument>
+                        <argument id="closeWindow"/>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="sfUiTargetObjectId"/>
+                      </arguments>
+                      <clauses>
+                        <clause name="substeps" testItemId="251">
+                          <steps>
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" isTitleUpdated="true" name="UiAssert" testItemId="252" title="Read Prov Date Value">
+                              <tags/>
+                              <arguments>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">ProvDate</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                                <argument id="fieldAssertions">
+                                  <value class="valueList" mutable="Mutable">
+                                    <uiFieldAssertion resultName="Sent_for_Provisioning_Date__c">
+                                      <fieldLocator uri="ui:locator?name=Sent_for_Provisioning_Date__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DApttus_Config2__OrderLineItem__c%26field%3DSent_for_Provisioning_Date__c"/>
+                                      <attributeAssertions>
+                                        <uiAttributeAssertion attributeName="value" caseInsensitive="true" comparisonType="None" regex="true">
+                                          <value class="compound">
+                                            <parts>
+                                              <value valueClass="string">/^((0?[13578]|10|12)(-|\\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[01]?))(-|\\/)((19)([2-9])(\\d</value>
+                                              <value valueClass="decimal">1</value>
+                                              <value valueClass="string">)|(20)([01])(\\d</value>
+                                              <value valueClass="decimal">1</value>
+                                              <value valueClass="string">)|([8901])(\\d</value>
+                                              <value valueClass="decimal">1</value>
+                                              <value valueClass="string">))|(0?[2469]|11)(-|\\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[0]?))(-|\\/)((19)([2-9])(\\d</value>
+                                              <value valueClass="decimal">1</value>
+                                              <value valueClass="string">)|(20)([01])(\\d</value>
+                                              <value valueClass="decimal">1</value>
+                                              <value valueClass="string">)|([8901])(\\d</value>
+                                              <value valueClass="decimal">1</value>
+                                              <value valueClass="string">))) ([0-9]|[0-5][0-9]):([0-9]|[0-5][0-9]) ([P][M]|[A][M])$/</value>
+                                            </parts>
+                                          </value>
+                                        </uiAttributeAssertion>
+                                      </attributeAssertions>
+                                    </uiFieldAssertion>
+                                  </value>
+                                </argument>
+                                <argument id="captureAfter">
+                                  <value class="value" valueClass="string">true</value>
+                                </argument>
+                                <argument id="columnAssertions">
+                                  <value class="valueList" mutable="Mutable"/>
+                                </argument>
+                                <argument id="pageAssertions">
+                                  <value class="valueList" mutable="Mutable"/>
+                                </argument>
+                                <argument id="beforeWait"/>
+                                <argument id="autoRetry"/>
+                              </arguments>
+                              <resultAssertions/>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.string.Match" name="Match" testItemId="253" title="Match: {ProvDate}=&gt;^(((((0[1-9])|(1\\d)|(2[0-8]))\\/((0[1-9])|(1[0-2])))|((31\\/((0[13578])|(1[02])))|((29|30)\\/((0[1,3-9])|(1[0-2])))))\\/((20[0-9][0-9])|(19[0-9][0-9])))|((29\\/02\\/(19|20)(([02468][048])|([13579][26]))))$=&gt;Match">
+                              <tags/>
+                              <arguments>
+                                <argument id="input">
+                                  <value class="variable">
+                                    <path element="ProvDate"/>
+                                  </value>
+                                </argument>
+                                <argument id="regex">
+                                  <value class="value" valueClass="string">^(((((0[1-9])|(1\\d)|(2[0-8]))\\/((0[1-9])|(1[0-2])))|((31\\/((0[13578])|(1[02])))|((29|30)\\/((0[1,3-9])|(1[0-2])))))\\/((20[0-9][0-9])|(19[0-9][0-9])))|((29\\/02\\/(19|20)(([02468][048])|([13579][26]))))$</value>
+                                </argument>
+                                <argument id="caseInsensitive">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="resultName">
+                                  <value class="value" valueClass="string">Match</value>
+                                </argument>
+                                <argument id="resultScope">
+                                  <value class="value" valueClass="string">Test</value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                            <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="254" title="Assert: {ProvDate.fields.Sent_for_Provisioning_Date__c.value} NotEqualTo ">
+                              <arguments>
+                                <argument id="expectedValue">
+                                  <value class="variable">
+                                    <path element="ProvDate"/>
+                                    <path element="fields"/>
+                                    <path element="Sent_for_Provisioning_Date__c"/>
+                                    <path element="value"/>
+                                  </value>
+                                </argument>
+                                <argument id="actualValue"/>
+                                <argument id="comparisonType">
+                                  <value class="value" valueClass="string">NotEqualTo</value>
+                                </argument>
+                                <argument id="caseSensitive">
+                                  <value class="value" valueClass="boolean">true</value>
+                                </argument>
+                                <argument id="numeric">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="retainDecimals">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="nullGreater">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="matchMultiLine">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="matchDotAll">
+                                  <value class="value" valueClass="boolean">false</value>
+                                </argument>
+                                <argument id="failureMessage">
+                                  <value class="value" valueClass="string">Provisioning date is Null</value>
+                                </argument>
+                              </arguments>
+                            </apiCall>
+                          </steps>
+                        </clause>
+                      </clauses>
+                      <generatedParameters>
+                        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+                          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+                          <type>
+                            <textType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiNavigate" name="UiNavigate" testItemId="256" title="Navigate: Backward">
+                      <arguments>
+                        <argument id="navigate">
+                          <value class="value" valueClass="string">Backward</value>
+                        </argument>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="string">false</value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Sleep" name="Sleep" testItemId="257" title="Sleep for {5} seconds">
+                      <tags>
+                        <string>disabled</string>
+                      </tags>
+                      <arguments>
+                        <argument id="sleepSecs">
+                          <value class="value" valueClass="decimal">5</value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+</testCase>
